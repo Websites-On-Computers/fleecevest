@@ -69,7 +69,12 @@ When a toolchain declaration exists (`docs/product/toolchain.md`, else
   gate. Failures come back as findings, not a silent rewrite.
 
 Route every artifact: end with `route: <stage> → <destination>` from the
-declaration. Live connector for the destination → offer to push, never push unasked.
+declaration — append `(project toolchain)` when a project file overrode a
+user one. Unparseable declaration rows are treated as absent: say so in one
+line, never guess a destination. Live connector for the destination → offer
+to push, never push unasked; a failed push gets one report — the connector's
+error and the artifact's local path — never a retry loop. Promote with no
+final destination declared → the gate still runs; the artifact stays local.
 No connector → name the known one from `references/connectors.md` once per
 session, then drop it. No declaration → no routing, full rigor, today's
 behavior.

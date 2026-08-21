@@ -43,9 +43,13 @@ When a toolchain declaration exists (docs/product/toolchain.md, else
 ~/.claude/fleecevest-toolchain.md): draft = ladder advisory (open questions
 legal, no kill-criteria gate). final = ladder enforced; no artifact claims
 its final destination until rungs 1-5 pass. "promote"/"finalize" re-runs the
-ladder as the gate. End artifacts with route: <stage> → <destination>. Live
-connector → offer to push, never push unasked. No declaration → full rigor,
-today's behavior.
+ladder as the gate. End artifacts with route: <stage> → <destination>
+((project toolchain) when a project file overrode a user one). Unparseable
+declaration rows = absent: say so, never guess. Live connector → offer to
+push, never push unasked; a failed push gets one report (connector error +
+local path), never a retry loop. Promote with no declared destination → the
+gate still runs, artifact stays local. No declaration → full rigor, today's
+behavior.
 
 ## When NOT to be ruthless
 

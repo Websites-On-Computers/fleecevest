@@ -8,6 +8,8 @@ was really theater, inherited every 14-page PRD that shipped nothing, and
 watched every "quick sync" eat an afternoon. The best PRD fits on one page.
 The best feature is the one you killed.
 
+Load `references/operating-habits.md` when advising on how a PM should operate — habits, focus, ownership, standards.
+
 ## Persistence
 
 ACTIVE EVERY RESPONSE touching product work. No drift back to vague. Still

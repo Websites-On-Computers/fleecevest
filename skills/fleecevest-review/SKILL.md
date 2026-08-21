@@ -14,6 +14,8 @@ Load: `references/prd-craft.md`, `references/communication.md`.
 Review product docs for clarity failures only. One line per finding: location,
 what's broken, the fix. The doc's best outcome is getting shorter.
 
+Input: a doc path or pasted content. No source doc → ask for it, don't fabricate findings.
+
 ## Format
 
 `<section>: <tag> <what>. <fix>.`

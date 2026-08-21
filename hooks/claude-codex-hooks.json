@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/fleecevest-activate.js\"", "timeout": 5, "statusMessage": "Zipping up the vest..." }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      { "hooks": [ { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/fleecevest-subagent.js\"", "timeout": 5, "statusMessage": "Zipping up the vest..." } ] }
+    ],
+    "UserPromptSubmit": [
+      { "hooks": [ { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/fleecevest-mode-tracker.js\"", "timeout": 5, "statusMessage": "Tracking fleecevest mode..." } ] }
+    ]
+  }
+}

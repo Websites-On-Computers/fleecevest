@@ -14,8 +14,14 @@ const { getFleecevestInstructions } = require('../hooks/fleecevest-instructions.
 const ROOT = path.join(__dirname, '..');
 
 const PROMPTS = [
-  { id: 'prd', text: 'Write a PRD for adding dark mode to our web app.' },
-  { id: 'spec', text: 'Write a product spec for a new customer referral program.' },
+  {
+    id: 'prd',
+    text: 'Write a PRD for adding dark mode to our web app. Context: 40% of sessions happen after 10pm, we have 200+ support tickets asking for it, and battery savings matter to our OLED mobile users.',
+  },
+  {
+    id: 'spec',
+    text: 'Write a product spec for a customer referral program. Context: CAC has doubled this year, 30% of new signups already come from word of mouth, and finance approved a $50-per-referral budget.',
+  },
   { id: 'strategy', text: 'We have 12 feature requests and can build 3 this quarter. Write the prioritization doc.' },
 ];
 
@@ -58,11 +64,19 @@ if (require.main === module) {
   let fleecePass = 0;
   let basePass = 0;
 
+  const date = new Date().toISOString().slice(0, 10);
+  const outputsDir = path.join(ROOT, 'benchmarks', 'results', `${date}-outputs`);
+  fs.mkdirSync(outputsDir, { recursive: true });
+
   for (const { id, text } of PROMPTS) {
     console.error(`running ${id} (baseline)...`);
-    const base = score(runArm(text, null));
+    const baseOut = runArm(text, null);
+    fs.writeFileSync(path.join(outputsDir, `${id}-baseline.md`), baseOut);
+    const base = score(baseOut);
     console.error(`running ${id} (fleecevest)...`);
-    const fleece = score(runArm(text, instructions));
+    const fleeceOut = runArm(text, instructions);
+    fs.writeFileSync(path.join(outputsDir, `${id}-fleecevest.md`), fleeceOut);
+    const fleece = score(fleeceOut);
     for (const name of Object.keys(CHECKS)) {
       rows.push({ prompt: id, check: name, baseline: base[name], fleecevest: fleece[name] });
       if (base[name]) basePass++;
@@ -71,7 +85,6 @@ if (require.main === module) {
   }
 
   const total = rows.length;
-  const date = new Date().toISOString().slice(0, 10);
   const report = [
     `# Behavior benchmark — ${date}`,
     '',

@@ -4,19 +4,16 @@ Ruthlessly clear PM mode for coding agents. The vest means you've shipped.
 
 ## Install
 
-From a marketplace directory:
+Two commands. If your install needs a runbook, it has failed.
 
 ```
-/plugin install
+claude plugin marketplace add /path/to/fleecevest
+claude plugin install fleecevest@fleecevest
 ```
 
-Or point at the repo directly:
-
-```
-claude plugin add /path/to/fleecevest
-```
-
-Restart the session. It activates on start, level `full`, no config needed.
+(Once published, the GitHub slug works in place of the path.) Or inside a
+session: `/plugin install fleecevest@fleecevest`. Restart the session. It
+activates on start, level `full`, no config needed.
 
 ## What it does
 

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "fleecevest",
+  "description": "Fleece-vested PM mode. Forces ruthless clarity: problem before solution, one-page PRDs, measurable outcomes with kill criteria, evidence over opinion.",
+  "owner": {
+    "name": "Matthew Littlehale"
+  },
+  "plugins": [
+    {
+      "name": "fleecevest",
+      "description": "Fleece-vested PM mode. Forces ruthless clarity: problem before solution, one-page PRDs, measurable outcomes with kill criteria, evidence over opinion.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

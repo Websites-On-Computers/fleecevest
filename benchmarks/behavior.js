@@ -8,6 +8,7 @@
 
 const { execFileSync } = require('node:child_process');
 const fs = require('node:fs');
+const os = require('node:os');
 const path = require('node:path');
 const { getFleecevestInstructions } = require('../hooks/fleecevest-instructions.js');
 
@@ -39,14 +40,18 @@ const CHECKS = {
   'one-pager': (out) => out.split('\n').length <= 120,
 };
 
-function runArm(prompt, instructions) {
-  const args = ['-p', '--model', 'haiku'];
+function runArm(prompt, instructions, workDir) {
+  // --safe-mode + empty temp cwd: no hooks, plugins, skills, MCP servers, or
+  // CLAUDE.md/AGENTS.md auto-discovery — neither arm can pick up local plugins
+  // or repo context. (--bare would also skip keychain reads and break auth.)
+  const args = ['-p', '--safe-mode', '--model', 'haiku'];
   if (instructions) args.push('--append-system-prompt', instructions);
   args.push(prompt);
   return execFileSync('claude', args, {
     encoding: 'utf8',
     timeout: 300000,
     maxBuffer: 10 * 1024 * 1024,
+    cwd: workDir,
   });
 }
 
@@ -67,14 +72,15 @@ if (require.main === module) {
   const date = new Date().toISOString().slice(0, 10);
   const outputsDir = path.join(ROOT, 'benchmarks', 'results', `${date}-outputs`);
   fs.mkdirSync(outputsDir, { recursive: true });
+  const workDir = fs.mkdtempSync(path.join(os.tmpdir(), 'fleecevest-bench-'));
 
   for (const { id, text } of PROMPTS) {
     console.error(`running ${id} (baseline)...`);
-    const baseOut = runArm(text, null);
+    const baseOut = runArm(text, null, workDir);
     fs.writeFileSync(path.join(outputsDir, `${id}-baseline.md`), baseOut);
     const base = score(baseOut);
     console.error(`running ${id} (fleecevest)...`);
-    const fleeceOut = runArm(text, instructions);
+    const fleeceOut = runArm(text, instructions, workDir);
     fs.writeFileSync(path.join(outputsDir, `${id}-fleecevest.md`), fleeceOut);
     const fleece = score(fleeceOut);
     for (const name of Object.keys(CHECKS)) {
@@ -89,6 +95,8 @@ if (require.main === module) {
     `# Behavior benchmark — ${date}`,
     '',
     `Model: haiku. 2 arms x ${PROMPTS.length} prompts, ${Object.keys(CHECKS).length} checks each.`,
+    '',
+    'Arms run with `--safe-mode` in an empty temp dir, so environment plugins and repo rules cannot contaminate either arm.',
     '',
     '| prompt | check | baseline | fleecevest |',
     '|---|---|---|---|',

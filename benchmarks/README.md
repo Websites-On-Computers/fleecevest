@@ -7,10 +7,10 @@
 npm run bench
 ```
 
-Requires an authenticated `claude` CLI and ~5 minutes. Makes 6 Haiku calls (3 prompts × 2 arms). Outputs a markdown table to stdout and saves results to `benchmarks/results/<date>.md`.
+Requires an authenticated `claude` CLI and ~5 minutes. Makes 6 Haiku calls (3 prompts × 2 arms). Outputs a markdown table to stdout and saves results to `benchmarks/results/<date>.md`. Raw per-arm outputs are archived to `benchmarks/results/<date>-outputs/` for full inspection.
 
 **Gate semantics:** The script exits with code 1 if the fleecevest arm doesn't beat baseline. A regression — when the persona delivers equal or worse output — is fatal. We don't tune the checks to flatter the persona; if you lose, that's a finding, not a regex bug.
 
 **What we're not measuring:** We're not running an LLM judge, surveying real users, or testing every edge case. This is a regression gate. A passing benchmark proves the persona measurably tightens thinking; a failing one demands investigation.
 
-**Prompt design note:** The prompts carry enough context to pass the clarity ladder — on context-free prompts the persona interrogates instead of writing, by design, which a one-shot benchmark can't score.
+**Prompt design note:** The PRD and spec prompts carry enough context to pass the clarity ladder. The strategy prompt is deliberately context-free to test how each arm handles an underspecified ask — the persona interrogates while baseline writes, by design, which a one-shot benchmark can't score.

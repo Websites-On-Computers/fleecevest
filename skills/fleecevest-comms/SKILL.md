@@ -11,6 +11,13 @@ description: >
 
 Load: `references/communication.md`.
 
+Toolchain: if a declaration exists (`docs/product/toolchain.md`, else
+`~/.claude/fleecevest-toolchain.md`), apply its comms row — stage rigor
+(draft advisory, final enforced), end with the `route: <stage> → <destination>`
+footer, offer push when the destination's connector is live (never push
+unasked), else name the known connector from `references/connectors.md` once
+per session. No declaration → skip all of this.
+
 Answer first. The reader decides in the first three lines whether the rest
 matters — write those three lines like they're the whole document.
 

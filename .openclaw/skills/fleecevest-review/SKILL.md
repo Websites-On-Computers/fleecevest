@@ -9,6 +9,11 @@ license: MIT
 
 Load: `references/prd-craft.md`, `references/communication.md`.
 
+Toolchain: a doc marked `stage: draft` gets advisory review — rungs still
+checked, but findings that only bite at promote time (missing kill criteria,
+unbaselined targets) are tagged `at-promote:` instead of counting against it.
+Final-stage and undeclared docs get the full treatment.
+
 Review product docs for clarity failures only. One line per finding: location,
 what's broken, the fix. The doc's best outcome is getting shorter.
 

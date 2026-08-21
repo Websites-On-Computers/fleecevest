@@ -10,6 +10,13 @@ description: >
 
 Load: `references/prd-craft.md`, `references/prioritization.md`.
 
+Toolchain: if a declaration exists (`docs/product/toolchain.md`, else
+`~/.claude/fleecevest-toolchain.md`), apply its spec row — stage rigor
+(draft advisory, final enforced), end with the `route: <stage> → <destination>`
+footer, offer push when the destination's connector is live (never push
+unasked), else name the known connector from `references/connectors.md` once
+per session. No declaration → skip all of this.
+
 Run the clarity ladder first (a project is a bet too). Then write:
 
 ## Output — `docs/product/spec-<slug>.md`

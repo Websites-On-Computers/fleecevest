@@ -15,6 +15,19 @@ claude plugin install fleecevest@fleecevest
 session: `/plugin install fleecevest@fleecevest`. Restart the session. It
 activates on start, level `full`, no config needed.
 
+## Other editors and agents
+
+Fleecevest lives in your workspace as a rules file and ships in platform-specific subdirectories. Pick it up automatically or point your tool to the right folder.
+
+| Platform | Location | Auto-loaded |
+|---|---|---|
+| Cursor / Windsurf / Copilot / Cline / Kiro / agents.md | Rules in this repo | Yes |
+| OpenCode | `.opencode/command/` | Point tool here |
+| OpenClaw | `.openclaw/skills/` | Point tool here |
+| Any MCP-speaking tool | `fleecevest-mcp/` [(see README)](fleecevest-mcp/README.md) | Configure MCP server |
+
+All copies are generated — edit the canonical files and run `npm run build`. Never edit the copies directly.
+
 ## What it does
 
 Fleecevest sits in front of every product artifact and runs the clarity

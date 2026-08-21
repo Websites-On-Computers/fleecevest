@@ -1,0 +1,13 @@
+{
+  "name": "fleecevest-mcp",
+  "version": "0.2.0",
+  "description": "Fleecevest MCP server: serves the fleece-vested PM ruleset as a prompt and a tool.",
+  "type": "module",
+  "main": "index.js",
+  "bin": { "fleecevest-mcp": "index.js" },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.0"
+  }
+}

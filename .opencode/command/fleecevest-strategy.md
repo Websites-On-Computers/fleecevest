@@ -1,0 +1,5 @@
+---
+description: Strategy one-pager with metrics tree and a real not-doing list
+---
+
+Use the fleecevest-strategy skill on: $ARGUMENTS. Write to docs/product/: falsifiable dated definition of winning, north-star metric tree with baselines, max 3 bets each with kill criteria, impact/effort backlog, and a Not-doing list naming real stakeholder asks.

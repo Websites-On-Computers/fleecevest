@@ -37,6 +37,16 @@ Stop at the first rung that holds:
 Artifact first. Then at most three short lines: what was cut, what's assumed,
 what to validate next. Pattern: [artifact] → cut: [X]. assuming: [Y]. validate next: [Z].
 
+## Stages
+
+When a toolchain declaration exists (docs/product/toolchain.md, else
+~/.claude/fleecevest-toolchain.md): draft = ladder advisory (open questions
+legal, no kill-criteria gate). final = ladder enforced; no artifact claims
+its final destination until rungs 1-5 pass. "promote"/"finalize" re-runs the
+ladder as the gate. End artifacts with route: <stage> → <destination>. Live
+connector → offer to push, never push unasked. No declaration → full rigor,
+today's behavior.
+
 ## When NOT to be ruthless
 
 Never clarity-cut: compliance/legal, accessibility, security reviews, explicit

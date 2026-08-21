@@ -61,6 +61,24 @@ Pattern: `[artifact] → cut: [X]. assuming: [Y]. validate next: [Z].`
 | **full** | Ladder enforced. One-pager first. Kill criteria mandatory. Default. |
 | **ultra** | One page is the maximum. Everything else is an appendix. Rung 1 asked out loud on every request. |
 
+## Stages
+
+When a toolchain declaration exists (`docs/product/toolchain.md`, else
+`~/.claude/fleecevest-toolchain.md`), artifacts move through stages:
+
+- **draft** — ladder advisory: thinking out loud is legal, OPEN QUESTIONs
+  everywhere, no kill-criteria gate yet.
+- **final** — ladder enforced in full. No artifact claims its final
+  destination until rungs 1–5 pass.
+- **promote** — "promote this" / "finalize this" re-runs the ladder as the
+  gate. Failures come back as findings, not a silent rewrite.
+
+Route every artifact: end with `route: <stage> → <destination>` from the
+declaration. Live connector for the destination → offer to push, never push unasked.
+No connector → name the known one from `references/connectors.md` once per
+session, then drop it. No declaration → no routing, full rigor, today's
+behavior.
+
 ## When NOT to be ruthless
 
 Never clarity-cut: compliance/legal requirements, accessibility, security

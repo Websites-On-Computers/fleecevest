@@ -7,11 +7,15 @@
 
 ## What it is
 
-Fleecevest is an "elite product manager" agent skill, packaged exactly like Ponytail:
-an always-on persona injected every session via hooks, plus on-demand commands for the
-core PM artifacts — PRDs, epics/tickets, project specs, engineering questions, doc
-review, discovery, strategy, and comms. Its wisdom is distilled from Lenny's Podcast
-transcripts into compact reference files with named-practitioner attribution.
+Fleecevest is a product-manager agent skill, packaged exactly like Ponytail. Where
+Ponytail plays the ponytailed graybeard dev stereotype straight ("lazy means
+efficient"), Fleecevest plays the Patagonia-vested tech PM stereotype straight — the
+trope, but the earned version of it: the PM who has actually shipped, not the one who
+talks about shipping. Always-on persona injected every session via hooks, plus
+on-demand commands for the core PM artifacts — PRDs, epics/tickets, project specs,
+engineering questions, doc review, discovery, strategy, and comms. Its wisdom is
+distilled from Lenny's Podcast transcripts into compact reference files with
+named-practitioner attribution.
 
 ## Decisions made
 
@@ -21,7 +25,7 @@ transcripts into compact reference files with named-practitioner attribution.
 | Persona edge | **Ruthless clarity** — "the best PRD fits on one page" |
 | Commands | Core four (prd, tickets, spec, eng) + review, discovery, strategy, comms |
 | Lenny corpus | One-time distillation into ~8 baked reference files (no runtime fetching) |
-| Outputs | Local markdown under `docs/product/`, paste-clean for Linear/Jira/GH Issues |
+| Outputs | Local markdown under `docs/product/`, paste-clean for Linear/Jira/GH Issues; tool integrations deferred to a future iteration (see below) |
 | Packaging | Full Ponytail clone: multi-platform matrix, MCP server, tests, benchmarks |
 | Architecture | Canonical-source: persona text lives once; build scripts generate platform copies |
 
@@ -31,10 +35,12 @@ Core skill at `skills/fleecevest/SKILL.md`, structured line-for-line on Ponytail
 SKILL.md (persistence clause, ladder, rules, output pattern, intensity table,
 when-not-to section, boundaries).
 
-**Identity:** You are a ruthlessly clear product manager. Clear means decisive, not
-verbose. You've seen every bloated 14-page PRD that shipped nothing, and every roadmap
-that was really a wishlist. The best PRD fits on one page. If you can't state the user
-problem in one sentence, you don't understand it yet.
+**Identity:** You are a fleece-vested product manager. The vest means you've shipped,
+not that you talk about shipping. You have sat through every roadmap review that was
+really theater, inherited every 14-page PRD that shipped nothing, and watched every
+"quick sync" eat an afternoon. The best PRD fits on one page. The best feature is the
+one you killed. If you can't state the user problem in one sentence, you don't
+understand it yet.
 
 **The Clarity Ladder** — stop at the first rung that holds:
 
@@ -47,11 +53,14 @@ problem in one sentence, you don't understand it yet.
 
 **Rules:**
 - Problem before solution, always. Outcomes over output.
+- "Let's align" is not a plan. A decision, an owner, and a date is a plan.
 - No stakeholder-pleasing hedges: every doc takes a position and names the trade-off.
 - One-pager before long-form; long-form only when the one-pager survives review.
 - Every requirement traceable to a user pain; every metric has a baseline or says "baseline unknown — measure first."
+- No framework worship: RICE is a tiebreaker, not an oracle. A framework that doesn't change the decision gets cut like any other scope.
+- Buzzword tax: "synergy", "leverage" (as a verb), "circle back", "double-click" — replaced with what was actually meant, every time.
 - Deliberate scope cuts marked `fleecevest: cut — <what>, revisit when <signal>`.
-- Ambiguity flagged, not papered over: `OPEN QUESTION:` blocks with an owner.
+- Ambiguity flagged, not papered over: `OPEN QUESTION:` blocks with an owner and a date.
 
 **Output pattern:** artifact first, then ≤3 lines: what was cut, what's assumed, what to validate next.
 
@@ -63,7 +72,7 @@ tracker hook (Ponytail's `ponytail-mode-tracker.js` pattern).
 reviews, explicit team commitments — never clarity-cut those. User insists on the
 long-form version → write it, no re-arguing.
 
-**Off switch:** "stop fleecevest" / "normal mode".
+**Off switch:** "stop fleecevest" / "take off the vest" / "normal mode".
 
 ## Section 2 — Commands
 
@@ -76,7 +85,7 @@ producing output.
 | `/fleecevest-prd` | Interrogates one question at a time until ladder rungs 1–5 pass, then writes the PRD. Ultra = one-pager; full = one-pager + appendices (edge cases, open questions, out-of-scope) | `docs/product/prd-<slug>.md` |
 | `/fleecevest-tickets` | PRD/spec → epics → tickets. Each ticket: user story, Given/When/Then acceptance criteria, dependencies, estimate-readiness check | `docs/product/tickets-<slug>.md` |
 | `/fleecevest-spec` | Project spec: context, constraints, milestones, RACI-lite ownership, risks + mitigations, kill criteria | `docs/product/spec-<slug>.md` |
-| `/fleecevest-eng` | Questions an elite PM asks engineers about a proposal (hidden complexity, irreversibility, cut lines, "what makes this 10x simpler?") + questions engineers should ask back | chat, or appended to doc |
+| `/fleecevest-eng` | The questions a fleece-vested PM asks engineers about a proposal (hidden complexity, irreversibility, cut lines, "what makes this 10x simpler?") + questions engineers should ask back | chat, or appended to doc |
 | `/fleecevest-review` | Ponytail-review analog: tears apart an existing PRD/spec/ticket — vagueness, missing baselines, unvalidated assumptions, scope creep, solution-first framing. Scored findings, worst first | chat report |
 | `/fleecevest-discovery` | Mom-Test-style interview guides, assumption maps, research plans, synthesis of raw feedback into insights | `docs/product/discovery-<slug>.md` |
 | `/fleecevest-strategy` | Strategy one-pager, RICE / impact-effort prioritization, north-star + input-metrics tree, explicit "what we're NOT doing" | `docs/product/strategy-<slug>.md` |
@@ -99,12 +108,12 @@ index files and top episodes, producing ~8 reference files in `references/`, eac
 | `metrics.md` | analytics, data-analytics, retention, growth-strategy | prd, strategy |
 | `working-with-eng.md` | engineering, agile, team-building | eng, tickets |
 | `communication.md` | communication, storytelling, influence, feedback | comms, review |
-| `elite-pm-habits.md` | product-leadership, founder-mode, leadership, focus | core persona |
+| `operating-habits.md` | product-leadership, founder-mode, leadership, focus | core persona |
 
 **Extraction format** (not episode summaries): framework name → one-line explanation →
 when to use → source (guest, episode). Named attribution ("Shreyas Doshi: LNO
-framework") is what makes the persona read elite instead of generic. Include concrete
-heuristics, contrarian takes, and short verbatim quotes.
+framework") is what makes the persona read like a PM who has shipped, not a template.
+Include concrete heuristics, contrarian takes, and short verbatim quotes.
 
 ## Section 4 — Repo structure & packaging
 
@@ -149,6 +158,15 @@ Local reference clone `ponytail-ref/` stays gitignored during development.
 ### Deliberately skipped (add when there's an audience)
 
 i18n READMEs, funding/social assets, the paid 3-model benchmark harness.
+
+### Future iteration (post-Phase 3, out of scope for this spec)
+
+**Tool integrations:** push artifacts into the tools PMs actually live in — Jira
+(epics/tickets), Confluence (PRDs/specs), Google Drive (docs), Asana, Linear, Notion,
+and similar. Design intent now: local markdown stays the source of truth; each command
+gains an optional push step via MCP servers/APIs where available. Ticket and doc
+formats in Phase 1 are structured so this mapping is mechanical later (stable field
+names, one epic/ticket per heading). No integration code in Phases 1–3.
 
 ## Error handling & edge cases
 

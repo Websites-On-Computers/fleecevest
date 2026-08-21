@@ -1,0 +1,5 @@
+---
+description: Tear apart a PRD/spec/ticket for clarity failures
+---
+
+Use the fleecevest-review skill on: $ARGUMENTS. One line per finding with tags (vague/solution-first/assumption/no-baseline/scope/theater/unkillable), worst first. End with net lines cuttable and ladder rungs failed. If it's genuinely clear, say 'Clear already. Ship it.'

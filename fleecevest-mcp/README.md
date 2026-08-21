@@ -12,8 +12,8 @@ convention nor a hook system to lean on.
 - Tool `fleecevest_instructions` — same ruleset, callable by the model when a
   prompt menu isn't available. Returns `{ mode, instructions }`.
 
-No mode argument, or an unrecognized one (including `off`), falls back to the
-configured default, then to `full`. Same resolver, same rules, every host.
+Accepted modes are `lite`, `full`, `ultra`; omit the argument to get the
+configured default. Same resolver, same rules, every host.
 
 ## When to use it
 
@@ -22,6 +22,10 @@ If it can do either of those, use the adapter instead — one page of PRD
 discipline shouldn't cost you an MCP round trip.
 
 ## Config
+
+First, run `npm install` inside `fleecevest-mcp/` — dependencies aren't committed.
+
+### Example config
 
 ```json
 {

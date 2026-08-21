@@ -11,6 +11,13 @@ description: >
 
 Load: `references/prd-craft.md`, `references/discovery.md`, `references/metrics.md`.
 
+Toolchain: if a declaration exists (`docs/product/toolchain.md`, else
+`~/.claude/fleecevest-toolchain.md`), apply its prd row — stage rigor
+(draft advisory, final enforced), end with the `route: <stage> → <destination>`
+footer, offer push when the destination's connector is live (never push
+unasked), else name the known connector from `references/connectors.md` once
+per session. No declaration → skip all of this.
+
 No PRD until ladder rungs 1–5 pass. Interrogate one question at a time, in
 ladder order. If rung 1 or 2 fails after honest questioning, output a one-line
 kill recommendation instead of a PRD — that is a success, not a failure.

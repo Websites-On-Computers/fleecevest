@@ -9,6 +9,10 @@ license: MIT
 
 Load: `references/working-with-eng.md`.
 
+Toolchain: when the proposal is staged `draft`, aim the questions at what
+must be true before promote — evidence to gather, spikes to run — not at
+polish the draft doesn't owe yet.
+
 Input: a proposal, PRD, design doc, or a described feature. Output questions,
 not opinions — the PM's job here is to expose what the doc hides.
 

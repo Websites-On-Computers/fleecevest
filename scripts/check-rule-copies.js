@@ -32,6 +32,7 @@ const INVARIANTS = [
   'Buzzword tax',
   'OPEN QUESTION',
   'The clearest doc that ships is the right doc',
+  'never push unasked',
 ];
 const SURFACES = [
   'skills/fleecevest/SKILL.md',

@@ -56,6 +56,8 @@ const OPENCLAW_DESCRIPTIONS = {
     'Strategy one-pager: falsifiable definition of winning, metric tree, max 3 bets with kill criteria, and a real not-doing list.',
   'fleecevest-comms':
     'Stakeholder updates, exec summaries, launch plans, announcements. Answer first, bad news above accomplishments.',
+  'fleecevest-toolchain':
+    'Declare the team PM toolchain: tracker, doc tools, comms, per-stage routing, and tracker ticket policy. Re-runnable to edit.',
   'fleecevest-help':
     'Quick reference for fleecevest: the clarity ladder, commands, intensity levels, and the off switch. One-shot display.',
 };

@@ -43,6 +43,20 @@ what's the metric with a kill criterion. Only the rungs that hold get an
 artifact. Fail rung one or two and the recommendation is to kill it, in one
 line — that's a success state, not a bug.
 
+## Your tools, your routing
+
+Fleecevest doesn't make you guess where an artifact lands. Declare it once
+in `docs/product/toolchain.md` (project) or `~/.claude/fleecevest-toolchain.md`
+(you, everywhere) — project wins if both exist. Three stages, one line each:
+draft is where thinking happens, open questions allowed. Final is
+ladder-gated — no artifact claims its final destination until the clarity
+rungs pass. Promote is the moment that gate gets enforced, not a formality
+on the way out the door.
+
+Fleecevest doesn't ship connectors — it uses the ones you have and can
+name the well-known one when you don't. The markdown stays the source of
+truth; it never pushes unasked.
+
 ## Commands
 
 | Command | What you get |
@@ -56,6 +70,7 @@ line — that's a success state, not a bug.
 | `/fleecevest-discovery` | Interview guides, assumption maps, research synthesis |
 | `/fleecevest-strategy` | Strategy one-pager: metrics tree, bets, a real not-doing list |
 | `/fleecevest-comms` | Stakeholder updates and launch comms, answer first |
+| `/fleecevest-toolchain` | Declare your team's tools, routing, and ticket policy |
 | `/fleecevest-help` | This card, in the persona's voice |
 
 Artifacts land in `docs/product/`.

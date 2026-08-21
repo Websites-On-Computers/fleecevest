@@ -44,7 +44,7 @@ test('every SKILL.md has name+description frontmatter', () => {
 test('references are distilled-stamped and within budget', () => {
   for (const f of glob(path.join(ROOT, 'references'), (f) => f.endsWith('.md'))) {
     const src = fs.readFileSync(f, 'utf8');
-    assert.match(src.split('\n')[2] ?? src, /distilled: \d{4}-\d{2}-\d{2}, corpus @ [0-9a-f]{7}/, `${f}: no distilled stamp`);
+    assert.match(src.split('\n')[2] ?? src, /(distilled: \d{4}-\d{2}-\d{2}, corpus @ [0-9a-f]{7})|(curated: \d{4}-\d{2}-\d{2})/, `${f}: no distilled/curated stamp`);
     assert.ok(src.split('\n').length <= 220, `${f}: over 220 lines`);
   }
 });

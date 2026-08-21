@@ -1,6 +1,6 @@
 {
   "name": "fleecevest",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Fleece-vested PM mode. Forces ruthless clarity: problem before solution, one-page PRDs, measurable outcomes with kill criteria, evidence over opinion.",
   "author": { "name": "Matthew Littlehale" },
   "hooks": "./hooks/claude-codex-hooks.json"

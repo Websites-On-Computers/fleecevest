@@ -1,6 +1,6 @@
 {
   "name": "fleecevest",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Fleece-vested PM mode. Forces ruthless clarity: one-page PRDs, outcomes over output, kill criteria on everything.",
   "scripts": {
     "test": "node --test tests/structure.test.js tests/platform.test.js tests/mcp.test.js tests/benchmark.test.js",

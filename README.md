@@ -2,6 +2,8 @@
 
 Ruthlessly clear PM mode for coding agents. The vest means you've shipped.
 
+New here? [Walk one feature end to end](WALKTHROUGH.md) — setup to teardown in eight steps.
+
 ## Install
 
 Two commands. If your install needs a runbook, it has failed.

@@ -28,6 +28,12 @@ Fleecevest lives in your workspace as a rules file and ships in platform-specifi
 
 All copies are generated — edit the canonical files and run `npm run build`. Never edit the copies directly.
 
+## Receipts
+
+The vest works. The behavior benchmark measures whether the pose forces the clarity ladder: problem-first, kill criteria, one-page discipline. Run it anytime (`npm run bench`) to watch baseline and fleecevest compete on the same 15 checks — PRD, spec, and strategy asks. The results: **baseline 7/15 — fleecevest 13/15** ([full results](benchmarks/results/)).
+
+See the [examples](examples/): real product prompts, same shape before and after the vest, showing what changes when you ship with clarity first.
+
 ## What it does
 
 Fleecevest sits in front of every product artifact and runs the clarity

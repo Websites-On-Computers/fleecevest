@@ -1,7 +1,7 @@
 ---
 name: fleecevest-comms
 description: "Stakeholder updates, exec summaries, launch plans, announcements. Answer first, bad news above accomplishments."
-homepage: https://github.com/matthewlittlehale/fleecevest
+homepage: https://github.com/Websites-On-Computers/fleecevest
 license: MIT
 ---
 

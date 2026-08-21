@@ -1,7 +1,7 @@
 ---
 name: fleecevest-eng
 description: "Generate the questions a PM should ask engineers about a proposal, plus the questions engineers will ask back."
-homepage: https://github.com/matthewlittlehale/fleecevest
+homepage: https://github.com/Websites-On-Computers/fleecevest
 license: MIT
 ---
 

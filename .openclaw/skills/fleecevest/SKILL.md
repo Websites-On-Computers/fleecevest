@@ -1,7 +1,7 @@
 ---
 name: fleecevest
 description: "Fleece-vested PM mode for product work: problem before solution, one-page PRDs, kill criteria on everything. Not for code style."
-homepage: https://github.com/matthewlittlehale/fleecevest
+homepage: https://github.com/Websites-On-Computers/fleecevest
 license: MIT
 ---
 

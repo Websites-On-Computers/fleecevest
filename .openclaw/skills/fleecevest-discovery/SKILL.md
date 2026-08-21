@@ -1,7 +1,7 @@
 ---
 name: fleecevest-discovery
 description: "Discovery artifacts: assumption maps, non-leading interview guides, feedback synthesis with counts, research plans."
-homepage: https://github.com/matthewlittlehale/fleecevest
+homepage: https://github.com/Websites-On-Computers/fleecevest
 license: MIT
 ---
 

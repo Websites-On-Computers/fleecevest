@@ -1,7 +1,7 @@
 ---
 name: fleecevest-spec
 description: "Write a project spec: context, hard constraints, demo-able milestones with owners, one decider, risks with tripwires, kill criteria."
-homepage: https://github.com/matthewlittlehale/fleecevest
+homepage: https://github.com/Websites-On-Computers/fleecevest
 license: MIT
 ---
 

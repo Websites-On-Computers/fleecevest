@@ -35,7 +35,7 @@ const RULE_COPIES = {
 // Same SKILL.md format, but description must be one line under 160 chars
 // (canonical descriptions are long, tuned for Claude's skill picker).
 // Body is copied verbatim from skills/<name>/SKILL.md so rules never drift.
-const HOMEPAGE = 'https://github.com/matthewlittlehale/fleecevest';
+const HOMEPAGE = 'https://github.com/Websites-On-Computers/fleecevest';
 
 const OPENCLAW_DESCRIPTIONS = {
   'fleecevest':

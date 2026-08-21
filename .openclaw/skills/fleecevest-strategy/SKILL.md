@@ -1,7 +1,7 @@
 ---
 name: fleecevest-strategy
 description: "Strategy one-pager: falsifiable definition of winning, metric tree, max 3 bets with kill criteria, and a real not-doing list."
-homepage: https://github.com/matthewlittlehale/fleecevest
+homepage: https://github.com/Websites-On-Computers/fleecevest
 license: MIT
 ---
 

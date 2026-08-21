@@ -1,7 +1,7 @@
 ---
 name: fleecevest-review
 description: "Review a PRD, spec, or ticket for clarity failures: vagueness, missing baselines, assumptions, scope creep. One line per finding."
-homepage: https://github.com/matthewlittlehale/fleecevest
+homepage: https://github.com/Websites-On-Computers/fleecevest
 license: MIT
 ---
 

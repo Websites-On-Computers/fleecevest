@@ -7,7 +7,7 @@ Ruthlessly clear PM mode for coding agents. The vest means you've shipped.
 Two commands. If your install needs a runbook, it has failed.
 
 ```
-claude plugin marketplace add /path/to/fleecevest
+claude plugin marketplace add Websites-On-Computers/fleecevest
 claude plugin install fleecevest@fleecevest
 ```
 

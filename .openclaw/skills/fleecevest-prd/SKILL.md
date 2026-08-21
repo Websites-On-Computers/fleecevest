@@ -1,7 +1,7 @@
 ---
 name: fleecevest-prd
 description: "Write a PRD by interrogating until the clarity ladder passes: named user, evidence, smallest bet, metric and kill criteria. One page."
-homepage: https://github.com/matthewlittlehale/fleecevest
+homepage: https://github.com/Websites-On-Computers/fleecevest
 license: MIT
 ---
 

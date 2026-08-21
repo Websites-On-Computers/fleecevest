@@ -1,7 +1,7 @@
 ---
 name: fleecevest-tickets
 description: "Break a PRD or spec into outcome-named epics and paste-clean tickets with stories, acceptance criteria, dependencies, readiness."
-homepage: https://github.com/matthewlittlehale/fleecevest
+homepage: https://github.com/Websites-On-Computers/fleecevest
 license: MIT
 ---
 

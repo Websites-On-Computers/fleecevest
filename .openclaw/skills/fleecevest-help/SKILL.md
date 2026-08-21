@@ -1,7 +1,7 @@
 ---
 name: fleecevest-help
 description: "Quick reference for fleecevest: the clarity ladder, commands, intensity levels, and the off switch. One-shot display."
-homepage: https://github.com/matthewlittlehale/fleecevest
+homepage: https://github.com/Websites-On-Computers/fleecevest
 license: MIT
 ---
 

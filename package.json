@@ -1,0 +1,7 @@
+{
+  "name": "fleecevest",
+  "version": "0.1.0",
+  "description": "Fleece-vested PM mode. Forces ruthless clarity: one-page PRDs, outcomes over output, kill criteria on everything.",
+  "scripts": { "test": "node --test tests/" },
+  "license": "MIT"
+}
